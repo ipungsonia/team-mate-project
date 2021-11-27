@@ -1,2 +1,1 @@
-Magang GAMAFORCE
-Backend : Git
+Team Mate Project Gamaforce Kelompok 2

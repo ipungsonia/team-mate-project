@@ -16,7 +16,7 @@
     <body>
         <h1>Create Your Mission</h1>
         <h4>Make your own mission plane by draw it in the map</h4>
-        <div id="map" style="height: 500px;"></div>
+        <div id="map" style="height: 500px;"></div><br/>
         <button type="submit" onclick="saveToDatabase()">Create</button>
         <h1>List Mission</h1>
         <h4>Here are your missions that have been created before</h4>
@@ -105,6 +105,9 @@
 
 <style>
 
+table {
+  text-align: center;
+}
 
 header {
   background-color: #76D6DC;
@@ -117,15 +120,20 @@ header {
   font-size: calc(10px + 2vmin);
   color: black;
   text-align: center;
+  padding-left: 10px;
 }
   
 .Head-comp {
   padding: 0 20px;
 }
   
-  
+h1 {
+  text-align: center;
+}
+
 h4 {
   color: #999999;
+  text-align: center;
 }
   
 button {
