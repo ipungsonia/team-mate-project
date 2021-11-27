@@ -14,12 +14,14 @@
     </header>
 
     <body>
+        <br/>
         <h1>Create Your Mission</h1>
-        <h4>Make your own mission plane by draw it in the map</h4>
+        <h4>Make your own mission plane by draw it in the map</h4> <br/>
         <div id="map" style="height: 500px;"></div><br/>
-        <button type="submit" onclick="saveToDatabase()">Create</button>
+        <div class="buttonCreate"><button type="submit" onclick="saveToDatabase()">Create</button></div>
+        <br/>
         <h1>List Mission</h1>
-        <h4>Here are your missions that have been created before</h4>
+        <h4>Here are your missions that have been created before</h4><br/>
         <table cellPadding ="10" width="100%">
           <thead>
             <tr>
@@ -105,6 +107,11 @@
 
 <style>
 
+* {
+  margin: 0 ;
+  font-family: 'PT Sans';
+}
+
 table {
   text-align: center;
 }
@@ -120,13 +127,13 @@ header {
   font-size: calc(10px + 2vmin);
   color: black;
   text-align: center;
-  padding-left: 10px;
+  padding-left: 30px;
 }
-  
-.Head-comp {
-  padding: 0 20px;
+
+.buttonCreate {
+  padding-left: 30px;
 }
-  
+
 h1 {
   text-align: center;
 }
