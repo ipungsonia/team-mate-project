@@ -22,31 +22,6 @@
         <br/>
         <h1>List Mission</h1>
         <h4>Here are your missions that have been created before</h4><br/>
-        <table cellPadding ="10" width="100%">
-          <thead>
-            <tr>
-              <th scope="col">id</th>
-              <th scope="col">Mission name</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td>1</td>
-                <td>Fly to Wisdom Park</td>
-                <td>
-                  <button>Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Random Flight</td>
-                <td>
-                  <button>Delete</button>
-                </td>
-              </tr>
-          </tbody>
-        </table>       
         <br>
         <ul id='listMisi'></ul>
 
@@ -61,13 +36,31 @@
         integrity="sha512-ozq8xQKq6urvuU6jNgkfqAmT7jKN2XumbrX1JiB3TnF7tI48DPI4Gy1GXKD/V3EExgAs1V+pRO7vwtS1LHg0Gw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             
+
         <script>
             fetch('/misi')
                 .then(data => {
                     data.json().then(resp => {
                         resp.forEach(element => {
                             console.log(element)
-                            $('#listMisi').append(`<li>${element.planName}, <a href="/misi/delete/${element.planId}">Hapus</a></li>`)
+                            $('#listMisi').append(`<table cellPadding ="10" width="100%">
+                                                      <thead>
+                                                        <tr>
+                                                          <th scope="col">id</th>
+                                                          <th scope="col">Mission name</th>
+                                                          <th></th>
+                                                        </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                            <td>${element.planId}</td>
+                                                            <td>${element.planName}</td>
+                                                            <td>
+                                                              <button href="/misi/delete/${element.planId}">Hapus</button>
+                                                            </td>
+                                                          </tr>
+                                                      </tbody>
+                                                    </table>`)
                         });                        
                     })
                 })
@@ -85,6 +78,7 @@
                     featureGroup: editableLayers
                 }
             });
+
             map.addControl(drawControl);
             map.on(L.Draw.Event.CREATED, function(event) {
                 editableLayers.addLayer(event.layer);
